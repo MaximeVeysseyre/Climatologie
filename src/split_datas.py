@@ -1,6 +1,5 @@
 from .credentials import Credentials as cr
 import csv
-
 import os
 
 def split_datas(filename, columnwanted):
@@ -17,7 +16,7 @@ def split_datas(filename, columnwanted):
     csv.field_size_limit(10000000)
 
     with open(RAW_LOCAL_PATH + filename, encoding='utf-8') as file_stream:
-        file_stream_reader = csv.DictReader(file_stream, delimiter='\t')
+        file_stream_reader = csv.DictReader(file_stream, delimiter=',')
         open_files_references = {}
 
         for row in file_stream_reader:
